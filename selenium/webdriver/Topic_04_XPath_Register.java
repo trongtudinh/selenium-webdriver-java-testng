@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class Topic_04_Login_Xpath {
+public class Topic_04_XPath_Register {
     WebDriver driver;
     String projectPath = System.getProperty("user.dir");
 
