@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Topic_05_Xpath_Login {
+public class Topic_04_Xpath_Login {
     WebDriver driver;
     String projectPath = System.getProperty("user.dir");
     String firstName, fullName, lastName, email, password;
