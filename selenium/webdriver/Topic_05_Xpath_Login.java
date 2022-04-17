@@ -137,6 +137,5 @@ public class Topic_05_Xpath_Login {
     public int generateRandomNumber() {
         Random rand = new Random();
         return  rand.nextInt(99);
-
     }
 }
