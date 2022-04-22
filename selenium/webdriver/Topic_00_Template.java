@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Topic_00_Template {
@@ -18,7 +19,6 @@ public class Topic_00_Template {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://www.facebook.com/");
     }
 
     @Test
@@ -47,5 +47,10 @@ public class Topic_00_Template {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public int generateRandomNumber() {
+        Random rand = new Random();
+        return  rand.nextInt(99);
     }
 }
