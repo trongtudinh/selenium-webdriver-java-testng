@@ -62,12 +62,30 @@ public class Topic_11_Button_Default_Radio_Checkbox {
 
     @Test
     public void TC_02_Default_Radio() {
+        driver.get("https://demos.telerik.com/kendo-ui/checkbox/index");
 
+        WebElement checkBoxElement = driver.findElement(By.xpath("//label[text()='Dual-zone air conditioning']/preceding::input[1]"));
+        checkBoxElement.click();
+
+        Assert.assertTrue(checkBoxElement.isSelected());
+
+        checkBoxElement.click();
+
+        Assert.assertFalse(checkBoxElement.isSelected());
     }
 
     @Test
     public void TC_03_Default_Checkbox() {
+        driver.get("https://demos.telerik.com/kendo-ui/radiobutton/index");
 
+        WebElement checkBoxElement = driver.findElement(By.xpath("//label[text()='2.0 Petrol, 147kW']/preceding-sibling::input"));
+        checkBoxElement.click();
+
+        Assert.assertTrue(checkBoxElement.isSelected());
+
+        driver.findElement(By.xpath("//label[text()='1.6 Diesel, 77kW']/preceding-sibling::input")).click();
+
+        Assert.assertFalse(checkBoxElement.isSelected());
     }
 
     @AfterClass
