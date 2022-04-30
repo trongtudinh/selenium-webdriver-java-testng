@@ -70,12 +70,14 @@ public class Topic_09_Handle_Default_Dropdown {
         driver.findElement(By.id("Company")).sendKeys(companyName);
         driver.findElement(By.id("Password")).sendKeys(password);
         driver.findElement(By.id("ConfirmPassword")).sendKeys(password);
+        sleepInSecond(5);
         driver.findElement(By.id("register-button")).click();
-
+        sleepInSecond(5);
         //II - Verify (Output Data)
         Assert.assertEquals(driver.findElement(By.className("result")).getText(),
-                "Your registration completed");
+                "Your registration completed 1");
         driver.findElement(By.className("ico-account")).click();
+        sleepInSecond(5);
         Assert.assertEquals(driver.findElement(By.id("FirstName")).getAttribute("value"),
                 firstName);
         Assert.assertEquals(driver.findElement(By.id("LastName")).getAttribute("value"),
@@ -93,17 +95,7 @@ public class Topic_09_Handle_Default_Dropdown {
 
         select = new Select(driver.findElement(By.name("DateOfBirthYear")));
         Assert.assertEquals(select.getFirstSelectedOption().getText(), year);
-
-
-    }
-
-    @Test
-    public void TC_02_() {
-
-    }
-
-    @Test
-    public void TC_03_() {
+        sleepInSecond(5);
 
     }
 
