@@ -1,5 +1,6 @@
 package webdriver;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Topic_00_Template {
     WebDriver driver;
     String projectPath = System.getProperty("user.dir");
+    Alert alert;
     JavascriptExecutor jsExecutor;
 
     @BeforeClass
