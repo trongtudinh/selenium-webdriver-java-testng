@@ -5,7 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,12 +20,15 @@ public class Topic_00_Template {
     WebDriver driver;
     String projectPath = System.getProperty("user.dir");
     Alert alert;
+    Actions action;
     JavascriptExecutor jsExecutor;
 
     @BeforeClass
     public void beforeClass() {
-        System.setProperty("webdriver.gecko.driver", projectPath + "/browserDrivers/geckodriver");
-        driver = new FirefoxDriver();
+
+        System.setProperty("webdriver.chrome.driver", projectPath + "/browserDrivers/chromedriver");
+        driver = new ChromeDriver();
+
         jsExecutor = (JavascriptExecutor) driver;
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
